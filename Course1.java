@@ -47,7 +47,7 @@ public class Course1 {
         for (int i = 0; i<4; i++) {
             Adj.add(new ArrayList<>());
         }
-
+        // Here you Know We need to Mention Edges that we are Gonna Add Here
         for (int i = 0; i < n; i++) {
             Adj.get(PreRequirsts[i][1]).add(PreRequirsts[i][0]); // Here IT Tells the Edges From Where It Will Go to
                                                                  // Where
