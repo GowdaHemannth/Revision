@@ -20,9 +20,32 @@ public class WordLadder {
             Set.add(WordList[i]);
         }
         Set.remove(Start);
-        
 
-        // Now CoMES Real Word
+      while(!Q.isEmpty()){
+         String Word=Q.peek().Word;
+         int Steps=Q.peek().Steps;
+         if(Word==Target){
+            return Steps;
+         }
+
+         for(int i=0;i<Word.length();i++){
+            for( char ch='a';ch<='z';ch++){
+                // Lets Break the Words into Set of Array then 
+                char replacedCharArray[]=Word.toCharArray();
+                // Here "Hemanth" String will Look Like ['H','E','M','A','N','T','H']
+                replacedCharArray[i]=ch;
+                // Here replace First character in to the many Changes
+                String NewWord=new String(replacedCharArray);
+                if(Set.contains(NewWord)){
+                    Q.add(new Pair(NewWord, Steps+1));
+                    Set.remove(NewWord);
+                }
+
+            }
+         }
+      }
+        
+    return -1;
 
 
     }
